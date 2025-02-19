@@ -16,10 +16,14 @@
 
 @file:Suppress("UnstableApiUsage")
 
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
+    id("com.google.dagger.hilt.android") version "2.44" apply false
 }
 
 android {
@@ -69,6 +73,10 @@ android {
 }
 
 dependencies {
+
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-compiler:2.44")
+
     // Kotlin serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 
