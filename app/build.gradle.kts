@@ -1,19 +1,3 @@
-/*
-* Copyright (C) 2023 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      https://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
 @file:Suppress("UnstableApiUsage")
 
 import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
@@ -23,7 +7,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
-    id("com.google.dagger.hilt.android") version "2.44" apply false
+    id("com.google.dagger.hilt.android") version "2.55" apply false
 }
 
 android {
@@ -74,8 +58,9 @@ android {
 
 dependencies {
 
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-compiler:2.44")
+    // Dagger
+    implementation("com.google.dagger:dagger:2.55")
+    kapt("com.google.dagger:dagger-compiler:2.55")
 
     // Kotlin serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
