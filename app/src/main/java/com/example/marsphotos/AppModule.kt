@@ -24,7 +24,3 @@ object AppModule {
         return MarsPhotosRepository(apiService)
     }
 }
-
-class SingletonComponent {
-
-}
